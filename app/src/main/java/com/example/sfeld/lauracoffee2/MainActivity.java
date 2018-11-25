@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
         EditText priceCoffee = (EditText) findViewById(R.id.inputPrice);
 
-        if (id == R.id.menu_small) {
+        if (id == R.id.menu_small){
             priceCoffee.setText("" + nSmallPrice);
 
             return true;
