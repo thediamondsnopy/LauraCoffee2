@@ -53,9 +53,11 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    EditText InputPrice = (EditText) findViewById(R.id.inputPrice);
+                    String sPrice = InputPrice.getText().toString();
 
-                    int nTotal;
-                    nTotal = Integer.parseInt(sCoffee) * 2;
+                    double nTotal;
+                    nTotal = Integer.parseInt(sCoffee) * Double.parseDouble(sPrice);
 
                     EditText OutputName = (EditText) findViewById(R.id.outputName);
                     OutputName.setText("Order Summary for: " + editTextValue);
@@ -85,8 +87,27 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        double nSmallPrice = 1.5;
+        double nNormalPrice = 2;
+        double nLargePrice = 2.5;
+
+        EditText priceCoffee = (EditText) findViewById(R.id.inputPrice);
+
+        if (id == R.id.menu_small) {
+            priceCoffee.setText("" + nSmallPrice);
+
+            return true;
+        }
+
+        if (id == R.id.menu_normal) {
+            priceCoffee.setText("" + nNormalPrice);
+
+            return true;
+        }
+
+        if (id == R.id.menu_large) {
+            priceCoffee.setText("" + nLargePrice);
+
             return true;
         }
 
